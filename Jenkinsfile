@@ -8,7 +8,7 @@ pipeline {
     }
 
     parameters {
-        booleanParam(name: "RUNE_FRONTEND_TESTS", defaultsValue: true)
+        booleanParam(name: "RUNE_FRONTEND_TESTS", defaultValue: true)
     }
    
     
