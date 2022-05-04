@@ -6,6 +6,10 @@ pipeline {
             label 'nodejs'
         }
     }
+
+    parameters {
+        booleanParam(name: "RUNE_FRONTEND_TESTS", defaultsValue: true)
+    }
    
     
     stages{
@@ -19,6 +23,7 @@ pipeline {
             
 
                 stage('Frontend Tests'){
+                    when { expression { params.RUNE_FRONTEND_TESTS}}
                     steps {
                         sh 'node ./frontend/test.js'
                     }
